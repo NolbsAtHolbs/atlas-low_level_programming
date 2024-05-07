@@ -9,7 +9,7 @@ all: $(NAME)
 	$(CC) -c $< -o $@
 
 $(NAME): $(SRC)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(SRC) -o $(NAME)
 
 clean:
 	rm -f $(OBJ) $(NAME)
