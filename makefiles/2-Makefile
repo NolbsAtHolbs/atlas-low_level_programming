@@ -10,6 +10,3 @@ all: $(NAME)
 
 $(NAME): $(SRC)
 	$(CC) $(SRC) -o $(NAME)
-
-clean:
-	rm -f $(OBJ) $(NAME)
