@@ -12,4 +12,4 @@ $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	rm -rf $(OBJ) $(NAME)
+	rm -f $(OBJ) $(NAME)
