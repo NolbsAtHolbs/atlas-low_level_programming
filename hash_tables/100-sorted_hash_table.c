@@ -52,6 +52,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		if (strcmp(node->key, key) == 0)
 		{
 			char *new_value = strdup(value);
+
 			if (new_value == NULL)
 				return (0);
 			free(node->value);
@@ -142,6 +143,7 @@ void shash_table_print(const shash_table_t *ht)
 	shash_node_t *node;
 
 	int comma = 0;
+
 	if (ht == NULL)
 		return;
 	printf("{");
