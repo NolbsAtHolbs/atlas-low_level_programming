@@ -53,23 +53,17 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	new_node = malloc(sizeof(shash_node_t));
 	if (new_node == NULL)
 		return (0);
-	new_node->key = strdup(key);
-	new_node->value = strdup(value);
+	new_node->key = strdup(key), new_node->value = strdup(value);
 	if (new_node->value == NULL)
 	{
 		free(new_node->key);
 		free(new_node);
 		return (0);
 	}
-	new_node->next = ht->array[index];
-	ht->array[index] = new_node;
-	new_node->snext = NULL;
-	new_node->sprev = NULL;
+	new_node->next = ht->array[index], ht->array[index] = new_node;
+	new_node->snext = NULL, new_node->sprev = NULL;
 	if (ht->shead == NULL)
-	{
-		ht->shead = new_node;
-		ht->stail = new_node;
-	}
+		ht->shead = new_node, ht->stail = new_node;
 	else if (strcmp(new_node->key, ht->shead->key) < 0)
 	{
 		new_node->snext = ht->shead;
