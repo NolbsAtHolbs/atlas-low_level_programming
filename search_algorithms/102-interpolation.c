@@ -17,9 +17,6 @@ int interpolation_search(int *array, size_t size, int value)
 		return (-1);
 	while (low <= high && value >= array[low] && value <= array[high])
 	{
-		if (array[high] == array[low])
-			break; /* avoid % by 0 if same values */
-
 		/* calculate position using interpolation formula */
 		fraction = (double)(value - array[low]) / (array[high] - array[low]);
 		pos = low + (size_t)((high - low) * fraction);
