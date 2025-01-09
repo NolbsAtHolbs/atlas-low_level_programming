@@ -2,11 +2,11 @@
 
 /**
  * interpolation_search - searches for a value in a sorted array of ints
- * 						  using the Interpolation search algo
+ *						  using the Interpolation search algo
  * @array: pointer to the first element of the sorted array
  * @size: number of elements in array
  * @value: value to search for
- * Return: first index where value is found, or -1 if not found or array is NULL
+ * Return: 1st index where value is found, or -1 if not found or array is NULL
  */
 int interpolation_search(int *array, size_t size, int value)
 {
@@ -23,7 +23,7 @@ int interpolation_search(int *array, size_t size, int value)
 			return (pos);
 		else if (array[pos] < value)
 		{
-			low = pos + 1;
+			low = pos++;
 			pos = low + (((double)(high - low) / (array[high] - array[low]))
 				  * (value - array[low]));
 		}
