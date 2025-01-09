@@ -10,14 +10,13 @@
  */
 int interpolation_search(int *array, size_t size, int value)
 {
-	size_t low = 0, high = size - 1, pos;
+	size_t low = 0, high = size - 1, pos = 0;
 	double fraction;
 
 	if (!array || size == 0)
 		return (-1);
 	while (low <= high && value >= array[low] && value <= array[high])
-	{
-		/* calculate position using interpolation formula */
+	{ /* calculate position using interpolation formula */
 		fraction = (double)(value - array[low]) / (array[high] - array[low]);
 		pos = low + (size_t)((high - low) * fraction);
 
