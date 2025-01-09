@@ -24,13 +24,12 @@ int interpolation_search(int *array, size_t size, int value)
 		fraction = (double)(value - array[low]) / (array[high] - array[low]);
 		pos = low + (size_t)((high - low) * fraction);
 
-		if (pos < size) /* print check statement */
-			printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
-		else
+		if (pos >= size)
 		{
 			printf("Value checked array[%lu] is out of range\n", pos);
-			break;
-		}
+			break; /* stop searching */
+		} /* print the comparison action */
+		printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
 		if (array[pos] == value)
 			return ((int)pos);
 		if (array[pos] < value)
