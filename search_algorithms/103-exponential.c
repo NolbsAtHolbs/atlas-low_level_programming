@@ -55,7 +55,7 @@ int ranged_bin_search(const int *array, size_t left, size_t right, int value)
 }
 
 /**
- * expntl_search - search for value in sorted array w/ expntl search, then bnry
+ * exponential_search - search 4 val in sorted array w/ expntl search, & binary
  * @array: pointer to the first element of the array
  * @size: number of elements in array
  * @value: value to search for
