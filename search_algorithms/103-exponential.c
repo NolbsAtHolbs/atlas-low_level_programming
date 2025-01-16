@@ -24,7 +24,7 @@ void print_subarray(const int *array, size_t left, size_t right)
 }
 
 /**
- * range_bin_search - performs binary search within [left, right]
+ * ranged_bin_search - performs binary search within [left, right]
  * @array: pointer to the first element of the entire array
  * @left: left boundary of the subarray
  * @right: right boundary of the subarray
