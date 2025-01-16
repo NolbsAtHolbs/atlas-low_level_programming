@@ -1,6 +1,6 @@
 #include "search_algos.h"
 
-int ranged_binary_search(const int *array, size_t left, size_t right, int value);
+int ranged_bin_search(const int *array, size_t left, size_t right, int value);
 void print_subarray(const int *array, size_t left, size_t right);
 
 /**
@@ -24,14 +24,14 @@ void print_subarray(const int *array, size_t left, size_t right)
 }
 
 /**
- * binary_search_range - performs binary search within [left, right]
+ * range_bin_search - performs binary search within [left, right]
  * @array: pointer to the first element of the entire array
  * @left: left boundary of the subarray
  * @right: right boundary of the subarray
  * @value: value to search for
  * Return: index where value is found, or -1 if not found
  */
-int ranged_binary_search(const int *array, size_t left, size_t right, int value)
+int ranged_bin_search(const int *array, size_t left, size_t right, int value)
 {
 	size_t mid;
 
@@ -82,6 +82,6 @@ int exponential_search(int *array, size_t size, int value)
 	else
 		high = size - 1;
 	printf("Value found between indexes [%lu] and [%lu]\n", prev, high);
-	idx = ranged_binary_search(array, prev, high, value);
+	idx = ranged_bin_search(array, prev, high, value);
 	return (idx);
 } /* binary search within [prev, high] */
